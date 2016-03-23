@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+
+<title>BootStrap Modals</title>
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="row top-margin">
+			<!--Start First Column-->
+            
+           <div class="row">
+              <div class="col-md-3">
+              </div> 
+              
+              <div class="col-md-6 text-center">
+                 <h2>Various BootStrap Models</h2>
+              </div>   
+           
+           </div>
+            
+            
+           <div class="row top-margin"> 
+           <div class="col-md-1"> </div>
+            <div class="col-md-10 "> 
+            <div class="col-md-3 skyviewr">
+			<button type="button" class="btn btn-primary active" data-toggle="modal"
+				data-target="#exampleModal" data-tab="skyviewr">Open modal
+				for SkyViewR</button>
+			</div>
+			<div class="col-md-3 railviewr">
+			<button type="button" class="btn btn-primary active" data-toggle="modal"
+				data-target="#exampleModal" data-tab="railviewr">Open modal
+				for RailViewR</button>
+			</div>
+			<div class="col-md-3 geoviewr">
+			<button type="button" class="btn btn-primary active" data-toggle="modal"
+				data-target="#exampleModal" data-tab="geoviewr">Open
+				modal for GeoViewR</button>
+			</div>
+			<div class="col-md-3 haulviewr">
+		    <button type="button" class="btn btn-primary active" data-toggle="modal"
+				data-target="#exampleModal" data-tab="haulviewr">Open
+				modal for HaulViewR</button>
+			</div>
+			</div>
+			</div>
+
+			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+				aria-labelledby="exampleModalLabel">
+				<div class="modal-dialog " role="document">
+				  <div id="modalPopUp" class="skyviewr">
+					<div class="modal-content" style="background-color: #f5f5f5;">
+						<div class="modal-header">
+						  <div class="modal-header-bottom">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h4 class="modal-title beta" id="exampleModalLabel">Switch Velocity and Usage Analysis Card</h4>
+						   </div>
+						</div>
+						<div class="modal-body">
+						   <div class="">
+							<form>
+								<div class="row">
+								    <div class="col-md-1"></div>
+								    <div class="col-md-3">
+									<label for="recipient-name" class="control-label">Dashboard:</label>
+									</div>
+									
+									<div class="col-md-7">
+									   <input type="text" class="form-control" id="recipient-name">
+									</div>
+									
+								</div>
+								
+								<div class="row top-margin">
+								     <div class="col-md-1"></div>
+									 <div class="col-md-3">
+									   <label for="recipient-name" class="control-label">Start Date:</label>
+									</div>
+									
+									<div class="col-md-7">
+									   <input type="text" class="form-control" id="startDate">
+									</div>
+									
+								</div>
+								<div class="row top-margin">
+								    <div class="col-md-1"></div>
+									<div class="col-md-3">
+									  <label for="recipient-name" class="control-label">End Date:</label>
+									</div>
+									
+									<div class="col-md-7">
+									   <input type="text" class="form-control" id="endDate">
+									</div>
+									
+								</div>
+							</form>
+							</div>
+						</div>
+						
+						<div class="modal-footer" style="background-color: #dddddd;">
+							<button type="button" class="btn btn-default regular"
+								data-dismiss="modal">Cancel</button>
+								
+							<button type="button" class="btn btn-primary active">Create
+								</button>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	<!--End Container-->
+</body>
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script>
+
+$('#exampleModal').on('show.bs.modal', function (event) {
+	  var button = $(event.relatedTarget) // Button that triggered the modal
+	  var recipient = button.data('tab') // Extract info from data-* attributes
+	  var className = $('#modalPopUp').attr('class');
+	   
+	  var modal = $(this);
+	  var divTochange = modal.find('#modalPopUp').removeClass(className);
+	  
+	  if(recipient == "skyviewr"){
+		 divTochange.addClass("skyviewr");
+	  }
+	  else if(recipient == "geoviewr"){
+		  divTochange.addClass("geoviewr");
+	  }
+	  else if(recipient == "railviewr"){
+		  divTochange.addClass("railviewr");
+	  }
+	  else if(recipient == "haulviewr"){
+		  divTochange.addClass("haulviewr");
+	  }
+	  
+	});
+
+
+</script>
+
+
+</html>
